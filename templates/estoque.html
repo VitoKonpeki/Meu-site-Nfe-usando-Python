@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque Atual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+
+<div class="retangulo-cima">
+    <div class="top-bar">
+        <p class="nome-logo">Sistema NFe - AGV</p>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Estoque Atual</h1>
+
+    <div class="btn-container">
+        {% if session.get("nivel") == 1 %}
+        <a href="/zerar_estoque" class="btn btn-danger">Zerar Estoque</a>
+        <a href="/zerar_notas" class="btn btn-danger">Zerar Notas Fiscais</a>
+        {% endif %}
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Entradas</th>
+                <th>Saídas</th>
+                <th>Saldo Atual</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto, item in estoque.items() %}
+            <tr>
+                <td><strong>{{ produto }}</strong></td>
+                <td><span style="color: #4CAF50; font-weight: 600;">{{ item.entradas }}</span></td>
+                <td><span style="color: #F44336; font-weight: 600;">{{ item.saidas }}</span></td>
+                <td><span style="color: #2196F3; font-weight: 600; font-size: 1.1em;">{{ item.quantidade }}</span></td>
+                <td><a href="{{ url_for('historico', produto=produto) }}" class="btn btn-info">Ver histórico</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="links-bottom">
+        <a href="{{ url_for('relatorio_entrada_saida') }}">Relatório Entradas/Saídas</a>
+        <a href="{{ url_for('dashboard_estoque') }}">Dashboard Estoque</a>
+        <a href="{{ url_for('relatorios') }}">Relatórios Financeiros</a>
+        <a href="{{ url_for('homepage') }}">Voltar à Homepage</a>
+    </div>
+</div>
+
+<div class="retangulo-baixo"></div>
+
+</body>
+</html>
