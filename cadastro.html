@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Conta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+    <div class="retangulo-cima">
+        <div class="top-bar">
+            <p class="nome-logo">Sistema NFe - AGV</p>
+        </div>
+    </div>
+
+    <div class="mainContent">
+        <h1 id="saudacao"></h1>
+        <p>Crie sua conta abaixo:</p>
+
+        <div class="linha-azul"></div>
+
+        <script>
+            const s = document.getElementById('saudacao');
+            const h = new Date().getHours();
+            s.textContent = (h < 12) ? "Bom dia! Seja bem-vindo!" :
+                            (h < 18) ? "Boa tarde! Seja bem-vindo!" :
+                                       "Boa noite! Seja bem-vindo!";
+        </script>
+
+        <div class="Caixas">
+            <form method="POST">
+                <input type="email" name="email" placeholder="Seu email">
+                <input type="password" name="Password" placeholder="Senha" required>
+                <button type="submit">Cadastrar</button>
+                 <p id="mensagem">{{ mensagem }}</p>
+            </form>
+        </div>
+
+        <a class="linkContaExistente" href="{{ url_for('login_conta_existente') }}">Já tem conta? Faça login</a>
+
+       
+    </div>
+
+    <div class="retangulo-baixo"></div>
+
+</body>
+</html>

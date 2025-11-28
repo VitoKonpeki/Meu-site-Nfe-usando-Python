@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+
+    <style>
+        .container h1,
+        .container h2,
+        .container h3,
+        .container p {
+            color: #222 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 >Relatórios</h1>
+
+    <div class="card">
+        <h2>Resumo Financeiro</h2> 
+            <p>Total de Compras: R$ {{ '%.2f' % total_compras }}</p>
+            <p>Total de Vendas: R$ {{ '%.2f' % total_vendas }}</p>
+            <p><strong>Saldo: R$ {{ '%.2f' % saldo }}</strong></p>
+                <div class="back-button">
+                    <a href="{{ url_for('homepage') }}"> Voltar à Homepage</a>
+                </div>
+    </div>
+    <div class = "center">
+    <div class="card">
+        <h2>Gráfico</h2>
+            <!-- Exibindo o gráfico gerado -->
+                <img src="{{ url_for('static', filename='grafico_relatorio.png') }}" alt="Gráfico de Relatório" />
+    </div>
+    </div>
+    <div class="card">
+        <h2>Histórico de Notas</h2>
+        
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Arquivo</th>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th>Valor Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in historico %}
+                <tr>
+                    <td>{{ h.arquivo }}</td>
+                    <td>{{ h.tipo }}</td>
+                    <td>{{ h.data }}</td>
+                    <td>R$ {{ '%.2f' % h.valor }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
+

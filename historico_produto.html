@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico do Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+
+<div class="retangulo-cima">
+    <div class="top-bar">
+        <p class="nome-logo">Sistema NFe - AGV</p>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Histórico: <strong>{{ produto }}</strong></h1>
+    
+    <div class="product-info">
+        <h2>{{ produto }}</h2>
+        <p>Acompanhe todas as movimentações deste produto</p>
+    </div>
+
+    {% if historico %}
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in historico %}
+            <tr>
+                <td>{{ item.data }}</td>
+                <td>
+                    {% if item.tipo == "COMPRA" or item.tipo == "0" %}
+                        <span class="tipo-compra">COMPRA</span>
+                    {% elif item.tipo == "VENDA" or item.tipo == "1" %}
+                        <span class="tipo-venda">VENDA</span>
+                    {% else %}
+                        <span style="color: #999;">{{ item.tipo }}</span>
+                    {% endif %}
+                </td>
+                <td><strong>{{ item.quantidade }}</strong></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="empty-state">
+        <p>Nenhum histórico registrado para este produto.</p>
+    </div>
+    {% endif %}
+
+    <div class="back-button">
+        <a href="{{ url_for('ver_estoque') }}">Voltar ao Estoque</a>
+        <a href="{{ url_for('homepage') }}">Voltar à Homepage</a>
+    </div>
+</div>
+
+<div class="retangulo-baixo"></div>
+
+</body>
+</html>

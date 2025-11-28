@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+    <div class="retangulo-cima">
+        <div class="top-bar">
+            <p class="nome-logo">Sistema NFe - AGV</p>
+        </div>
+    </div>
+
+    <div class="mainContent">
+        <h1>Login</h1>
+        <p>Entre com seus dados:</p>
+
+        <div class="linha-azul"></div>
+
+        <div class="Caixas">
+            <form method="POST">
+                <input type="email" name="email" placeholder="Seu email">
+                <input type="password" name="Password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <a class="linkcadastro_user" href="{{ url_for('cadastro_user') }}">Criar nova conta</a>
+
+        <p id="mensagem">{{ mensagem }}</p>
+    </div>
+
+    <div class="retangulo-baixo"></div>
+
+</body>
+</html>
