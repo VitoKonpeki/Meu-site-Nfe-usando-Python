@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+
+<div class="retangulo-cima">
+    <div class="top-bar">
+        <p class="nome-logo">Sistema NFe - AGV</p>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Dashboard do Estoque</h1>
+
+    <div class="product-info">
+        <p>Visualize o desempenho de entradas e saídas por produto</p>
+    </div>
+
+    {% if grafico_url %}
+        <div class="chart-container">
+            <img src="{{ grafico_url }}?t={{ range(1, 10000) | random }}" alt="Gráfico Estoque">
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h2>Sem dados para exibir</h2>
+            <p>Nenhum produto foi registrado no estoque ainda.</p>
+        </div>
+    {% endif %}
+
+    <div class="back-button">
+        <a href="{{ url_for('ver_estoque') }}">Voltar ao Estoque</a>
+        <a href="{{ url_for('relatorio_entrada_saida') }}">Relatório Detalhado</a>
+        <a href="{{ url_for('homepage') }}">Voltar à Homepage</a>
+    </div>
+</div>
+
+<div class="retangulo-baixo"></div>
+
+</body>
+</html>

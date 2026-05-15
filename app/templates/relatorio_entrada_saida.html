@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Entradas/Saídas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+
+<div class="retangulo-cima">
+    <div class="top-bar">
+        <p class="nome-logo">Sistema NFe - AGV</p>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Relatório Entradas / Saídas</h1>
+
+    <div class="product-info">
+        <p>Visualize o resumo de todas as entradas e saídas de produtos</p>
+    </div>
+
+    {% if relatorio %}
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Entradas</th>
+                <th>Saídas</th>
+                <th>Saldo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linha in relatorio %}
+            <tr>
+                <td><strong>{{ linha.produto }}</strong></td>
+                <td><span style="color: #4CAF50; font-weight: 600;">{{ linha.entradas }}</span></td>
+                <td><span style="color: #F44336; font-weight: 600;">{{ linha.saidas }}</span></td>
+                <td><span style="color: #2196F3; font-weight: 600;">{{ linha.saldo }}</span></td>
+                <td><a href="{{ url_for('historico', produto=linha.produto) }}" class="btn btn-info">Detalhes</a></td>
+            </tr>
+            {% endfor %}
+            <tr style="background: #f0f0f0; font-weight: bold;">
+                <td>TOTAIS</td>
+                <td style="color: #4CAF50;">{{ total_entradas }}</td>
+                <td style="color: #F44336;">{{ total_saidas }}</td>
+                <td style="color: #2196F3;">{{ total_entradas - total_saidas }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+    <div class="empty-state">
+        <h2>Nenhum dado disponível</h2>
+        <p>Nenhum produto foi registrado no estoque ainda.</p>
+    </div>
+    {% endif %}
+
+    <div class="back-button">
+        <a href="{{ url_for('ver_estoque') }}"> Voltar ao Estoque</a>
+        <a href="{{ url_for('dashboard_estoque') }}"> Dashboard</a>
+        <a href="{{ url_for('homepage') }}"> Voltar à Homepage</a>
+    </div>
+</div>
+
+<div class="retangulo-baixo"></div>
+
+</body>
+</html>
