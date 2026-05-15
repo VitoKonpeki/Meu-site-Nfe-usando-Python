@@ -1,0 +1,134 @@
+{
+    "INVENTORE": {
+        "quantidade": 37.906,
+        "entradas": 37.906,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 37.906
+            }
+        ]
+    },
+    "VOLUPTATEM": {
+        "quantidade": -20.968,
+        "entradas": 0,
+        "saidas": 20.968,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "VENDA",
+                "quantidade": 20.968
+            }
+        ]
+    },
+    "ISTE": {
+        "quantidade": 6.52,
+        "entradas": 6.52,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 6.52
+            }
+        ]
+    },
+    "PERFERENDIS": {
+        "quantidade": 4.397,
+        "entradas": 4.397,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 4.397
+            }
+        ]
+    },
+    "VITAE": {
+        "quantidade": 40.591,
+        "entradas": 40.591,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 40.591
+            }
+        ]
+    },
+    "A": {
+        "quantidade": 67.379,
+        "entradas": 67.379,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 67.379
+            }
+        ]
+    },
+    "EUM": {
+        "quantidade": 59.649,
+        "entradas": 59.649,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 59.649
+            }
+        ]
+    },
+    "COMMODI": {
+        "quantidade": 3.616,
+        "entradas": 3.616,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:20",
+                "tipo": "COMPRA",
+                "quantidade": 3.616
+            }
+        ]
+    },
+    "SIMILIQUE": {
+        "quantidade": 62.692,
+        "entradas": 62.692,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:46",
+                "tipo": "COMPRA",
+                "quantidade": 62.692
+            }
+        ]
+    },
+    "CUMQUE": {
+        "quantidade": 48.772,
+        "entradas": 48.772,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:46",
+                "tipo": "COMPRA",
+                "quantidade": 48.772
+            }
+        ]
+    },
+    "DELECTUS": {
+        "quantidade": 5.593,
+        "entradas": 5.593,
+        "saidas": 0,
+        "historico": [
+            {
+                "data": "27/11/2025 21:46",
+                "tipo": "COMPRA",
+                "quantidade": 5.593
+            }
+        ]
+    }
+}

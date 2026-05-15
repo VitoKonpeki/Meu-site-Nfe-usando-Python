@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+    <div class="retangulo-cima">
+        <div class="top-bar">
+            <p class="nome-logo">Sistema NFe - AGV</p>
+        </div>
+    </div>
+
+    <div class="mainContent">
+
+        <h1>Bem-vindo!</h1>
+        <p>Escolha o que deseja fazer:</p>
+
+        <div class="menu-links">
+            
+            {% if session.get("nivel") != 3 %}
+            <a href="{{ url_for('importar_arquivo') }}">Importar Nova Nota</a>
+            {% endif %}
+            <a href="{{ url_for('importar_notas') }}">Ver Notas Existentes</a>
+            <a href="{{ url_for('relatorios') }}">Relatórios Financeiros</a>
+            <a href="{{ url_for('ver_estoque') }}">Estoque Atual</a>
+            <a href="{{ url_for('logout') }}">Sair</a>
+        </div>
+
+    </div>
+
+    <div class="retangulo-baixo"></div>
+
+</body>
+
+</html>

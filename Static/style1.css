@@ -1,0 +1,691 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 10px 0 20px;
+    line-height: 1.6;
+}
+
+/* <<<< ADICIONE ISTO AQUI: */
+.container h1,
+.container h2,
+.container h3 {
+    color: #333 !important;
+}
+
+/* -------------------------
+   BODY / LAYOUT BASE
+-------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("beautiful-backgrounds-vol-1-6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding-top: 100px;
+    padding-bottom: 40px;
+    color: #d3e2e6;
+}
+
+/* -------------------------
+   BARRA SUPERIOR / RODAPÉ
+-------------------------- */
+.top-bar {
+    width: 100%;
+    height: 80px;
+    background-color: #002147;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.retangulo-baixo {
+    width: 100%;
+    height: 40px;
+    background: rgba(3, 19, 109, 0.8);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    z-index: 900;
+}
+
+/* -------------------------
+   CONTEÚDO PRINCIPAL
+-------------------------- */
+.mainContent {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 40px 50px;
+    border-radius: 20px;
+
+    height: 444px;
+
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+p {
+    margin: 10px 0 20px;
+    line-height: 1.6;
+}
+
+.linha-azul {
+    width: 70%;
+    height: 3px;
+    background: #5dade2;
+    margin: 10px auto 25px;
+    border-radius: 3px;
+}
+
+/* -------------------------
+   FORMULÁRIOS
+-------------------------- */
+.Caixas input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+    width: 80%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+
+    background: #eaeaea;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(93, 173, 226, 0.5);
+}
+
+button,
+.btn,
+.botao-enviar {
+    background-color: #144e4e;
+    color: white;
+
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover,
+.btn:hover,
+.botao-enviar:hover {
+    background-color: #01acac;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(1, 172, 172, 0.4);
+}
+
+/* Botões Específicos */
+.btn-danger {
+    background-color: #F44336;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+}
+
+.btn-info {
+    background-color: #2196F3;
+    font-size: 0.95em;
+    padding: 10px 16px;
+}
+
+.btn-info:hover {
+    background-color: #1976D2;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+.btn-success {
+    background-color: #4CAF50;
+    font-size: 0.95em;
+    padding: 10px 16px;
+}
+
+.btn-success:hover {
+    background-color: #388E3C;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-primary {
+    background-color: #667eea;
+}
+
+.btn-primary:hover {
+    background-color: #764ba2;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background-color: #2196F3;
+}
+
+.btn-secondary:hover {
+    background-color: #1976D2;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+/* -------------------------
+   LINKS / BOTÕES DA HOME
+-------------------------- */
+.menu-links a,
+.linkContaExistente,
+.linkcadastro_user,
+.import_notas,
+.relatorios,
+.sair_homepage {
+    display: block;
+
+    margin: 10px auto;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.12);
+
+    width: 75%;
+    padding: 12px;
+    border-radius: 10px;
+
+    color: #d3e2e6;
+    transition: 0.3s;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-links a:hover,
+.linkContaExistente:hover,
+.relatorios:hover,
+.sair_homepage:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* -------------------------
+   CONTAINERS / CARDS
+-------------------------- */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+
+    background: white;
+    padding: 25px 35px;
+
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+    color: #222;
+}
+
+.card {
+    background: rgb(210, 217, 218);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+    color: black;
+}
+
+.card:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* -------------------------
+   TABELAS
+-------------------------- */
+table,
+.tabela {
+    width: 100%;
+    /* border-collapse: collapse; */
+    border-radius: 20px 20px 20px 20px ;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table thead th,
+.tabela th {
+    padding: 15px;
+    background: linear-gradient(135deg, #41496b 0%, #6e78a5 100%);
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+table tbody td,
+.tabela td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+}
+
+table tbody tr:nth-child(odd),
+.tabela tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+table tbody tr:hover,
+.tabela tr:hover {
+    background: #f0f0f0;
+    transition: 0.2s;
+}
+
+/* -------------------------
+   PAGINAÇÃO
+-------------------------- */
+.pagination {
+    display: flex !important;
+    justify-content: center;
+
+    gap: 8px;
+    list-style: none;
+    padding: 20px 0;
+}
+
+.pagination a,
+.pagination span {
+    padding: 8px 12px;
+    background: #4d79ff;
+    color: white !important;
+    border-radius: 8px;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.pagination a:hover {
+    background: #2f52cc;
+    transform: translateY(-2px);
+}
+
+.pagination .active span {
+    background: #1c37aa !important;
+}
+
+/* -------------------------
+   CAMPOS DE ARQUIVO
+-------------------------- */
+.file-label {
+    display: block;
+    background: #4d79ff;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.file-label:hover {
+    background: #2f52cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(77, 121, 255, 0.4);
+}
+
+.file-label input {
+    display: none;
+}
+
+/* -------------------------
+   MENSAGENS / ALERTAS
+-------------------------- */
+.mensagem-sucesso {
+    margin-top: 15px;
+    padding: 12px;
+    color: #0a801a;
+    background: #c8e6c9;
+    border-left: 4px solid #4CAF50;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.mensagem-erro {
+    margin-top: 15px;
+    padding: 12px;
+    color: #c62828;
+    background: #ffcdd2;
+    border-left: 4px solid #F44336;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.mensagem-info {
+    margin-top: 15px;
+    padding: 12px;
+    color: #01579b;
+    background: #b3e5fc;
+    border-left: 4px solid #2196F3;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* -------------------------
+   HISTÓRICO / DASHBOARD
+-------------------------- */
+.product-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.product-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.empty-state h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.empty-state p {
+    font-size: 1.1em;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+}
+
+.stat-card h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stat-card p {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.tipo-compra {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.tipo-venda {
+    background-color: #ffcdd2;
+    color: #c62828;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.back-button,
+.links-bottom,
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.back-button a,
+.links-bottom a,
+.button-container a {
+    padding: 12px 30px;
+    background-color: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.back-button a:hover,
+.links-bottom a:hover,
+.button-container a:hover {
+    background-color: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* -------------------------
+   RESPONSIVIDADE
+-------------------------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .mainContent {
+        width: 92%;
+        padding: 30px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    table,
+    .tabela {
+        font-size: 0.9em;
+    }
+
+    table thead th,
+    .tabela th {
+        padding: 10px;
+    }
+
+    table tbody td,
+    .tabela td {
+        padding: 8px;
+    }
+
+    .menu-links a,
+    .linkContaExistente,
+    .linkcadastro_user,
+    .import_notas,
+    .relatorios,
+    .sair_homepage {
+        width: 95%;
+    }
+
+    .btn-container,
+    .button-container,
+    .links-bottom {
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .btn,
+    button,
+    .botao-enviar {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .mainContent {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .container {
+        width: 98%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .btn,
+    button {
+        width: 90%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    table thead th,
+    .tabela th {
+        padding: 8px;
+    }
+
+    table tbody td,
+    .tabela td {
+        padding: 6px;
+    }
+}
+
+.estoqueAtual {
+    color: #222;
+}
+
+.titulo_relatorios {
+    color:#222;
+}
+
+.card * {
+    color:rgb(0, 0, 0) !important;
+}
+
+.center{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}

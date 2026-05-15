@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importar Nova Nota</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+<div class="top-bar">
+    Sistema NFe - AGV
+</div>
+
+<div class="container">
+
+    <h1>Importar Nova Nota Fiscal</h1>
+    <p>Selecione um arquivo XML válido para adicionar ao sistema.</p>
+
+    <div class="card">
+        <form action="{{ url_for('upload_notas') }}" method="POST" enctype="multipart/form-data">
+            <label class="file-label">
+                Escolher arquivo XML
+                <input type="file" name="arquivo_xml" accept=".xml" required>
+            </label>
+
+            <button class="botao-enviar" type="submit">Enviar Nota</button>
+        </form>
+
+        {% if mensagem %}
+        <p class="mensagem-sucesso">{{ mensagem }}</p>
+        {% endif %}
+    </div>
+
+    <div class="links-bottom">
+    <a href="{{ url_for('homepage') }}" class="botao-voltar">Voltar para a Home</a>
+        </div>
+        
+</div>
+
+</body>
+</html>

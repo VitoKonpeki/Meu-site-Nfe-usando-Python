@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Importadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+<div class="top-bar">
+    Sistema NFe - AGV
+</div>
+
+<div class="container">
+
+    <h1>Notas Fiscais Importadas</h1>
+    <p>Abaixo estão todas as notas já carregadas no sistema:</p>
+
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Arquivo</th>
+                <th>Nome do Emitente</th>
+                <th>CNPJ</th>
+                <th>Produto</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for item in dados %}
+            <tr>
+                <td>{{ item.Arquivo }}</td>
+                <td>{{ item.Nome }}</td>
+                <td>{{ item.CNPJ }}</td>
+                <td>{{ item.prod }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        {{ pagination.links }}
+    </div>
+
+    <a href="{{ url_for('homepage') }}" class="botao-voltar">Voltar para a Home</a>
+
+</div>
+
+</body>
+</html>
